@@ -13,7 +13,7 @@ $(document).ready(function () {
       type: 'GET',
       url: 'http://www.omdbapi.com/?t=' + input,
       data: { name: pokeName, number: pokeNum },
-      dataType: "dataType",
+      dataType: 'dataType',
       success: function (response) {
         $('#alert').val('Success!');
       }
