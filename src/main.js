@@ -21,6 +21,7 @@ function ajaxResponse(result) {
   console.log(result);
 }
 
+
 function ajaxMovieRequest() {
   OMDBRequest.data.t = $('#search-input').val();
   OMDBRequest.success = function(response) { ajaxMovieResponse(response); }
@@ -30,6 +31,9 @@ function ajaxMovieRequest() {
 function ajaxMovieResponse (data) {
   console.log('Ajax Movie Response');
   genres(data.genres);
+
+
+  // $('#poster').css( background, 'url(' + imgURL + ')' )
 }
 
 function Genre(name) {
