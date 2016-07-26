@@ -20,7 +20,5 @@ $(document).ready(function () {
 		  }).done( function( results ) {
 			console.log( 'Movie Response:', results) ;
 		  });
-		// var formFields = $(this).serialize();
-		// console.log(formFields);
 	});
 });
