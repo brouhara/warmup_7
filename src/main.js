@@ -13,7 +13,7 @@ var OMDBRequest = {
 }
 
 function ajaxRequest(request) {
-  $.ajax(request).done(function (result) { ajaxResponse(result) });
+  $.ajax(request);
 }
 
 function ajaxResponse(result) {
@@ -30,37 +30,47 @@ function ajaxMovieRequest() {
 
 function ajaxMovieResponse (data) {
   console.log('Ajax Movie Response');
-  genres(data.genres);
+  console.log(data);
 
+  genres(data.Genre);
 
-  // $('#poster').css( background, 'url(' + imgURL + ')' )
+  function setPoster(img) {
+    $('#poster', { background:'url(' + img + ')' });
+  }``
 }
 
 function Genre(name) {
-  return $(document.createElement('option')).attr('data-genre', name);
+  return $(document.createElement('option')).data('genre', name);
 }
 
 function genres(genres) {
-  $genres = $('#genres');
-  $placeholder = $('#option-placholder');
+  var $genres = $('#genres');
+  var $placeholder = $('#option-placeholer');
+
+  console.log('Genres');
 
   function createGenre(name) {
     var $genre = new Genre(name);
+    $genre.val(name);
+    $genre.text(name);
     return $genre;
   }
 
   function appendGenre($genre) {
-    $genres.append($option);
+    $genres.append($genre);
     return $genres;
   }
 
   function getGenre(name) {
-    return $('#data-genre=' + name);
+    return $genres.data(name);
   }
 
   // Returns if the genre exists or not
   function isGenre(name) {
-    return (getGenre(name) !== undefined) ? true : false
+    if (getGenre(name) !== undefined) {
+      return true;
+    }
+    return false;
   }
 
   // Creates the genre and appends the genre
@@ -72,12 +82,20 @@ function genres(genres) {
   function parse(string) { return string.split(','); }
 
   // Removes option placeholder
-  function removePlaceholder() { $placeholder.remove(); }
+  function removePlaceholder() {
+     $placeholder.remove();
+  }
 
   // Adds Genre options to Genres
   function populate(genres) {
+    console.log('populating');
+    removePlaceholder();
+
     parse(genres).forEach(function (name) {
-      if (!(isGenre(name))) {
+      console.log('Checking for genre: ' + name);
+
+      if (isGenre(name) === false) {
+        console.log('Genre not found: ' + name);
         addGenre(name);
       }
     });
