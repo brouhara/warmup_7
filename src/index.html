@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Warmup 1 Exercise July 26</title>
+    <title>Warmup Exercise July 26</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   </head>
   <body>
@@ -14,15 +14,22 @@
         <input type="text" name="search-bar" class="form-control" id="search-input">
       </fieldset>
       <fieldset class="form-group col-md-2">
-        <button type="button" name="search" class="form-control btn btn-default">Search</button>
+        <button type="button" name="search" class="form-control btn btn-primary" data-dismiss="alert">Search</button>
       </fieldset>
       <fieldset class="form-group col-md-4">
-        <select class="form-control" name="select-drop-down" id="drop-down">
+        <select class="form-control" name="select-drop-down" id="genre">
           <option class="placeholder">- Select - </option>
         </select>
-      </fieldset>''
+      </fieldset>
+      <fieldset class="col-md-4">
+        <img src="http://placehold.it/350x350" id="img-placeholder">
+        <br>
+        <br>
+        <br>
+        <label for="img-label" id="img-label" class="form-control"></label>
+      </fieldset>
     </form>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="./main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   </body>
 </html>
