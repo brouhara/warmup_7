@@ -5,9 +5,10 @@ var OMDBRequest = {
   type: 'GET',
   url: 'http://www.omdbapi.com/',
   data: { t: input },
-  dataType: 'dataType',
+  dataType: 'json',
   success: function (response) {
     $('#alert').val('Success!');
+    console.log('test');
   }
 }
 
@@ -17,11 +18,18 @@ function ajaxRequest(request) {
 
 function ajaxResponse(result) {
      console.log('Ajax Response:');
+     console.log(result);
 }
 
 function ajaxMovieRequest() {
   OMDBRequest.data.t = $('#search-input').val();
   ajaxRequest(OMDBRequest);
+}
+
+function genre(genres) {
+  function parseGenre() {
+    
+  }
 }
 
 $(document).ready(function () {
