@@ -6,9 +6,10 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   </head>
   <body>
-    <div class="jumbotron-text-left">
-      <h1><b>Movie Search</b></h1>
+    <div class="jumbotron text-center">
+      <h1><b><i>Movie Search</i></b></h1>
     </div>
+    <div class="container">
     <form>
       <fieldset class="form-group col-md-6">
         <input type="text" name="search-bar" class="form-control" id="search-input" placeholder="" value ="Man on Fire">
@@ -17,33 +18,41 @@
         <button type="button" name="search" class="form-control btn btn-primary" data-dismiss="alert">Search</button>
       </fieldset>
       <fieldset class="form-group col-md-4">
+        <form class="select-genre">
         <select class="form-control" name="select-drop-down" id="genre">
           <option id="option-placeholer" class="placeholder" date-genres="">- Select - </option>
         </select>
+      </form>
+        <br>
+        <br>
+        <br>
       </fieldset>
-      <fieldset class="col-md-4">
+      <div class="well well-md row">
+      <div class="card col-md-4">
         <img src="http://placehold.it/350x350" class="poster" id="1">
         <br>
         <br>
         <br>
-        <label for="img-label" id="img-label" class="form-control"></label>
-      </fieldset>
-      <fieldset class="col-md-4">
+        <p for="img-label" id="img-label" class="card-text"><i></i></p>
+      </div>
+      <div class="card col-md-4">
         <img src="http://placehold.it/350x350" class="poster" id="2">
         <br>
         <br>
         <br>
-        <label for="img-label" id="img-label" class="form-control"></label>
-      </fieldset>
-      <fieldset class="col-md-4">
+        <p for="img-label" id="img-label" class="card-text"><i></i></p>
+      </div>
+      <div class="card col-md-4">
         <img src="http://placehold.it/350x350" class="poster" id="3">
         <br>
         <br>
         <br>
-        <label for="img-label" id="img-label" class="form-control"></label>
-      </fieldset>
+        <p for="img-label" id="img-label" class="card-text"><i></i></p>
+      </div>
+    </div>
     </form>
     <script src="./main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </div>
   </body>
 </html>
